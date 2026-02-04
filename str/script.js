@@ -51,6 +51,25 @@ else{
 }
 
 this.state.isMobile = isMobile;
+
+// https://learn.microsoft.com/ja-jp/microsoft-edge/web-platform/how-to-detect-win11
+// FireFoxとIEだとこの方法は使えないので
+if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
+  this.state.windowsVersion = "Unknown";
+  this.state.isFirefoxOrIE = true;
+} else {
+  navigator.userAgentData.getHighEntropyValues([
+    "platform",
+    "platformVersion",
+    "architecture",
+    "model",
+    "fullVersionList"
+    ])
+ .then(ua => {
+   this.state.pcInfo = ua;   
+ });
+}
+
 }
       },
       "title": "Check User Environment",
@@ -93,7 +112,7 @@ this.state.isMobile = isMobile;
       "parameters": {},
       "messageHandlers": {},
       "title": "IC",
-      "skip": "${state.isMobile}",
+      "skip": "${state.isMobile || state.isFirefoxOrIE }",
       "tardy": true,
       "plugins": []
     },
@@ -1467,7 +1486,7 @@ console.log('データ送信終了');
         {
           "type": "text",
           "title": "お知らせ",
-          "content": "この実験は，PCからのみ参加いただけます。\nスマートフォンやタブレットPCでは参加いただけません。\n画面を閉じて終了してください。"
+          "content": "この実験は，PCからのみ参加いただけます。\nスマートフォンやタブレットPCでは参加いただけません。\n\nまた，実験に用いるウェブブラウザはGoogle Chrome，Microsoft Edge，Safariのいずれかです。\nそれ以外のブラウザではご参加いただけません。\n\n画面を閉じて終了してください。"
         }
       ],
       "scrollTop": true,
@@ -1481,7 +1500,7 @@ console.log('データ送信終了');
       "messageHandlers": {},
       "title": "Instruction for Non PC users",
       "tardy": true,
-      "skip": "${!(state.isMobile)}"
+      "skip": "${!(state.isMobile) && !(state.isFirefoxOrIE)}"
     },
     {
       "type": "lab.html.Page",
