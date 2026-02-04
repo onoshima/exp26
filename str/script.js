@@ -41,16 +41,16 @@ const study = lab.util.fromObject({
 const userAgentInfo = this.state.meta.userAgent;
 const platformInfo = this.state.meta.platform;
 
-let isPC;
+let isMobile;
 
 if(platformInfo =='iPhone' || platformInfo =='iPad' || userAgentInfo.indexOf('android') > 0){
-  isPC = false;
+  isMobile = true;
 }
 else{
-  isPC = true;
+  isMobile = false;
 }
 
-this.state.isPC = isPC;
+this.state.isMobile = isMobile;
 }
       },
       "title": "Check User Environment",
@@ -63,7 +63,7 @@ this.state.isPC = isPC;
         {
           "required": true,
           "type": "html",
-          "content": "\u003Ch2\u003E研究説明書\u003C\u002Fh2\u003E\n\n\u003Cp\u003E以下の説明をお読みいただき，本研究へご協力いただける方は研究参加への同意にチェックマークを入れてお進みください。本研究はフルスクリーンモードで行います。研究への参加を途中で中止される場合はEscキーでフルスクリーンモードを解除してブラウザを閉じるようにしてください。\u003C\u002Fp\u003E\n\n\u003Ch3\u003E①研究の目的\u003C\u002Fh3\u003E\n  \u003Cp\u003E人に2つの異なる情報を与え，片方の情報に基づいて判断することを求めると，もう片方の情報が判断に影響することが知られています。この影響の強さは個人によって異なることが知られており，本研究では，この個人差を調べるより良い方法を開発することを目的としています。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E②研究の方法\u003C\u002Fh3\u003E\n  \u003Cp\u003E この研究では，Webブラウザ上で（1）画面の表示に従ってキーを押す課題，および（2）簡単なアンケートに取り組んでいただきます。個人によって異なりますが所要時間は10分から15分程度です。\n\n  \u003Ch3\u003E③研究に伴う危険性及び不利益について\u003C\u002Fh3\u003E\n  \u003Cp\u003Eキー押し課題では，モニターを見続けることで目の疲れや肩こりなどの一時的な疲労やストレスを感じる可能性がありますが，身体や精神に長く続く影響が生じる心配はありません。また，万が一負担や不快感などを感じる場合は，あなたの意思で研究への参加をいつでも中止することができます。中止に伴う不利益は一切生じませんが，中止した場合には謝礼をお支払いすることはできません。\n\n  \u003Ch3\u003E④研究結果の使われ方\u003C\u002Fh3\u003E\n  \u003Cp\u003E研究で得られたデータは，学術論文や学会発表等の学術目的，および，大学等で用いられる教科書において教育目的として利用される可能性があります。また，本研究は研究の透明性を高める観点から研究で取得したデータを研究データ公開用のページ（https:\u002F\u002Fosf.io\u002F 等）で公開します。このデータは研究参加者にランダムなIDを付与した上で公開しますので，あなた個人を特定する情報が公になることは一切ありません。\n\n  \u003Ch3\u003E⑤個人情報とデータの取り扱い\u003C\u002Fh3\u003E\n  \u003Cp\u003Eキー押しの課題やアンケート調査における回答データののほかにアクセスしているブラウザの種類や画面の解像度等の情報が記録されますが，データは全て匿名で扱われます。研究データは本研究の関係者以外がアクセスできないサーバー上に保管されます。研究期間終了後，5年間保管された後に破棄されます。データ公開用ページで公開するデータについては，5年目以降も公開を続けるものとします。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E⑥研究協力の自由及び同意の撤回について\u003C\u002Fh3\u003E\n  \u003Cp\u003E研究へ参加するかどうかはあなたの自由な意思で決めることができ，研究への参加は強制されるものではありません。研究へ参加しないことによってあなたが不利益をこうむることは一切ありません。データは匿名で記録される関係で，研究終了後は同意を撤回できないことをご了承ください。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E研究の問い合わせ先\u003C\u002Fh3\u003E\n  \u003Cp\u003E本研究の内容に関してご意⾒・ご質問などがございましたら，研究責任者にお尋ね下さい。\u003Cbr\u003E\u003Cbr\u003E\n  連絡先： 愛知学院大学心理学部心理学科 小野島昂洋\u003Cbr\u003E\n  E-mail: onoshima.t@gmail.com",
+          "content": "\u003Ch2\u003E研究説明書\u003C\u002Fh2\u003E\n\n\u003Cp\u003E以下の説明をお読みいただき，本研究へご協力いただける方は研究参加への同意にチェックマークを入れてお進みください。本研究はフルスクリーンモードで行います。研究への参加を途中で中止される場合はEscキーでフルスクリーンモードを解除してブラウザを閉じるようにしてください。\u003C\u002Fp\u003E\n\n\u003Ch3\u003E①研究の目的\u003C\u002Fh3\u003E\n  \u003Cp\u003E人に2つの異なる情報を与え，片方の情報に基づいて判断することを求めると，もう片方の情報が判断に影響することが知られています。この影響の強さは個人によって異なることが知られており，本研究では，この個人差を調べるより良い方法を開発することを目的としています。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E②研究の方法\u003C\u002Fh3\u003E\n  \u003Cp\u003E この研究では，Webブラウザ上で（1）画面の表示に従ってキーを押す課題，および（2）簡単なアンケートに取り組んでいただきます。個人によって異なりますが所要時間は10分から15分程度です。\n\n  \u003Ch3\u003E③研究に伴う危険性及び不利益について\u003C\u002Fh3\u003E\n  \u003Cp\u003Eキー押し課題では，モニターを見続けることで目の疲れや肩こりなどの一時的な疲労やストレスを感じる可能性がありますが，身体や精神に長く続く影響が生じる心配はありません。また，万が一負担や不快感などを感じる場合は，あなたの意思で研究への参加をいつでも中止することができます。中止に伴う不利益は一切生じませんが，中止した場合には謝礼をお支払いすることはできません。\n\n  \u003Ch3\u003E④研究結果の使われ方\u003C\u002Fh3\u003E\n  \u003Cp\u003E研究で得られたデータは，学術論文や学会発表等の学術目的，および，大学等で用いられる教科書において教育目的として利用される可能性があります。また，本研究は研究の透明性を高める観点から研究で取得したデータを研究データ公開用のページ（https:\u002F\u002Fosf.io\u002F 等）で公開します。このデータは研究参加者にランダムなIDを付与した上で公開しますので，あなた個人を特定する情報が公になることは一切ありません。\n\n  \u003Ch3\u003E⑤個人情報とデータの取り扱い\u003C\u002Fh3\u003E\n  \u003Cp\u003Eキー押しの課題やアンケート調査における回答データのほかにアクセスしているブラウザの種類や画面の解像度等の情報が記録されますが，データは全て匿名で扱われます。研究データは本研究の関係者以外がアクセスできないサーバー上に保管されます。研究期間終了後，5年間保管された後に破棄されます。データ公開用ページで公開するデータについては，5年目以降も公開を続けるものとします。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E⑥研究協力の自由及び同意の撤回について\u003C\u002Fh3\u003E\n  \u003Cp\u003E研究へ参加するかどうかはあなたの自由な意思で決めることができ，研究への参加は強制されるものではありません。研究へ参加しないことによってあなたが不利益をこうむることは一切ありません。データは匿名で記録される関係で，研究終了後は同意を撤回できないことをご了承ください。\u003C\u002Fp\u003E\n\n  \u003Ch3\u003E研究の問い合わせ先\u003C\u002Fh3\u003E\n  \u003Cp\u003E本研究の内容に関してご意⾒・ご質問などがございましたら，研究責任者にお尋ね下さい。\u003Cbr\u003E\u003Cbr\u003E\n  連絡先： 愛知学院大学心理学部心理学科 小野島昂洋\u003Cbr\u003E\n  E-mail: onoshima.t@gmail.com",
           "name": ""
         },
         {
@@ -93,7 +93,7 @@ this.state.isPC = isPC;
       "parameters": {},
       "messageHandlers": {},
       "title": "IC",
-      "skip": "${!(state.isPC)}",
+      "skip": "${state.isMobile}",
       "tardy": true,
       "plugins": []
     },
@@ -127,7 +127,7 @@ this.options.templateParameters.push({
       "title": "Assign Participant ID and Stimulus Type",
       "tardy": true,
       "plugins": [],
-      "skip": "${!(state.isPC) || state.IC != 1}",
+      "skip": "${state.isMobile || state.IC != 1}",
       "shuffleGroups": [],
       "template": {
         "type": "lab.flow.Sequence",
@@ -486,7 +486,7 @@ if (this.state.ended_on == 'timeout') {
                   {
                     "required": true,
                     "type": "html",
-                    "content": "\u003Cp\u003Eこの課題では，「左」の文字が表示されたら\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eキーを，「右」の文字が表示されたら\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E文字が\u003Cstrong\u003E表示される位置は関係ありません\u003C\u002Fstrong\u003E。\n文字の\u003Cstrong\u003E内容のみ\u003C\u002Fstrong\u003Eに注目してキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003Eできる限り素早く，正確にキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eか\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eのキーを押すと，再開します\u003C\u002Fp\u003E",
+                    "content": "\u003Cp\u003Eこの課題では，「左」の文字が表示されたら\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eキーを，「右」の文字が表示されたら\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E文字が\u003Cstrong\u003E表示される位置は関係ありません\u003C\u002Fstrong\u003E。\n文字の\u003Cstrong\u003E内容のみ\u003C\u002Fstrong\u003Eに注目してキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003Eできる限り素早く，正確にキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eか\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eのキーを押すと，本番が始まります\u003C\u002Fp\u003E",
                     "name": ""
                   }
                 ],
@@ -736,7 +736,7 @@ this.options.content.push({
                   {
                     "required": true,
                     "type": "html",
-                    "content": "\u003Cp\u003Eこの課題では，「左」の文字が表示されたら\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eキーを，「右」の文字が表示されたら\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E文字が\u003Cstrong\u003E表示される位置は関係ありません\u003C\u002Fstrong\u003E。\n文字の\u003Cstrong\u003E内容のみ\u003C\u002Fstrong\u003Eに注目してキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003Eできる限り素早く，正確にキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eか\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eのキーを押すと，本番が始まります\u003C\u002Fp\u003E",
+                    "content": "\u003Cp\u003Eこの課題では，「左」の文字が表示されたら\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eキーを，「右」の文字が表示されたら\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E文字が\u003Cstrong\u003E表示される位置は関係ありません\u003C\u002Fstrong\u003E。\n文字の\u003Cstrong\u003E内容のみ\u003C\u002Fstrong\u003Eに注目してキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003Eできる限り素早く，正確にキーを押してください。\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Ckbd\u003EF\u003C\u002Fkbd\u003Eか\u003Ckbd\u003EJ\u003C\u002Fkbd\u003Eのキーを押すと，再開します\u003C\u002Fp\u003E",
                     "name": ""
                   }
                 ],
@@ -960,55 +960,55 @@ this.options.content.push({
                 "items": [
                   {
                     "label": "悪いクセをやめられない",
-                    "coding": "1"
+                    "coding": "SC-1"
                   },
                   {
                     "label": "だらけてしまう",
-                    "coding": "2"
+                    "coding": "SC-2"
                   },
                   {
                     "label": "場にそぐわないことを言ってしまう",
-                    "coding": "3"
+                    "coding": "SC-3"
                   },
                   {
                     "label": "自分にとってよくないことでも，楽しければやってしまう",
-                    "coding": "4"
+                    "coding": "SC-4"
                   },
                   {
                     "label": "自分にとってよくない誘いは，断る",
-                    "coding": "5"
+                    "coding": "SC-5"
                   },
                   {
                     "label": "もっと自制心があればよいのにと思う",
-                    "coding": "6"
+                    "coding": "SC-6"
                   },
                   {
                     "label": "誘惑に負けない",
-                    "coding": "7"
+                    "coding": "SC-7"
                   },
                   {
                     "label": "自分に厳しい人だと言われる",
-                    "coding": "8"
+                    "coding": "SC-8"
                   },
                   {
                     "label": "集中力がない",
-                    "coding": "9"
+                    "coding": "SC-9"
                   },
                   {
                     "label": "先のことを考えて，計画的に行動する",
-                    "coding": "10"
+                    "coding": "SC-10"
                   },
                   {
                     "label": "よくないことと知りつつ，やめられない時がある",
-                    "coding": "11"
+                    "coding": "SC-11"
                   },
                   {
                     "label": "他にどういう方法があるか，よく考えずに行動してしまう",
-                    "coding": "12"
+                    "coding": "SC-12"
                   },
                   {
                     "label": "趣味や娯楽のせいで，やるべきことがそっちのけになることがある",
-                    "coding": "13"
+                    "coding": "SC-13"
                   }
                 ],
                 "width": "5",
@@ -1077,16 +1077,16 @@ this.options.content.push({
                     "coding": "Fun-8"
                   },
                   {
-                    "label": "楽しいかもしれないから，というだけの理由で何かをすることがよくある",
+                    "label": "欲しいものを手にいれるチャンスを見つけると，すぐに動き出す",
                     "coding": "Drive-9"
                   },
                   {
-                    "label": "楽しいかもしれないから，というだけの理由で何かをすることがよくある",
-                    "coding": "Reward-10"
+                    "label": "誰かが私のことを怒っていると考えたり，知ったりすると，私はかなり心配になったり動揺したりする",
+                    "coding": "BIS-10"
                   },
                   {
                     "label": "何か好きなことをするチャンスをみつけると，私はすぐに興奮する",
-                    "coding": "BIS-11"
+                    "coding": "Reward-11"
                   },
                   {
                     "label": "私はしばしば時のはずみで行動する",
@@ -1456,25 +1456,6 @@ console.log('データ送信終了');
       "items": [
         {
           "type": "text",
-          "content": "実験を終了します。画面を閉じてください。"
-        }
-      ],
-      "scrollTop": true,
-      "submitButtonText": "Continue →",
-      "submitButtonPosition": "hidden",
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "End of Experiment"
-    },
-    {
-      "type": "lab.html.Page",
-      "items": [
-        {
-          "type": "text",
           "title": "お知らせ",
           "content": "この実験は，PCからのみ参加いただけます。\nスマートフォンやタブレットPCでは参加いただけません。\n画面を閉じて終了してください。"
         }
@@ -1490,7 +1471,26 @@ console.log('データ送信終了');
       "messageHandlers": {},
       "title": "Instruction for Non PC users",
       "tardy": true,
-      "skip": "${state.isPC}"
+      "skip": "${!(state.isMobile)}"
+    },
+    {
+      "type": "lab.html.Page",
+      "items": [
+        {
+          "type": "text",
+          "content": "実験を終了します。画面を閉じてください。"
+        }
+      ],
+      "scrollTop": true,
+      "submitButtonText": "Continue →",
+      "submitButtonPosition": "hidden",
+      "files": {},
+      "responses": {
+        "": ""
+      },
+      "parameters": {},
+      "messageHandlers": {},
+      "title": "End of Experiment"
     }
   ]
 })
