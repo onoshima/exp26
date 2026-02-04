@@ -59,7 +59,8 @@ if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
   this.state.isFirefoxOrIE = true;
 } else {
   this.state.isFirefoxOrIE = false;
-  navigator.userAgentData.getHighEntropyValues([
+  try {
+    navigator.userAgentData.getHighEntropyValues([
     "platform",
     "platformVersion",
     "architecture",
@@ -68,8 +69,12 @@ if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
     ])
  .then(ua => {
    this.state.pcInfo = ua;   
- });
+   });
+  } catch (e) { // モバイルでもお知らせ場面までは進ませたい
+    this.state.isFirefoxOrIE = false;
+  }
 }
+
 
 }
       },
