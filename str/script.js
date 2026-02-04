@@ -58,6 +58,7 @@ if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
   this.state.windowsVersion = "Unknown";
   this.state.isFirefoxOrIE = true;
 } else {
+  this.state.isFirefoxOrIE = false;
   navigator.userAgentData.getHighEntropyValues([
     "platform",
     "platformVersion",
