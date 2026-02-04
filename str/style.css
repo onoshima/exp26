@@ -1,0 +1,12 @@
+/* Please define your custom styles here */
+#page-item-BISBAS table.page-item-table td:last-child{display: none;}
+#page-item-BISBAS table.page-item-table th:last-child{display: none;}
+#page-item-BISBAS table.page-item-table col:last-child{display: none;} 
+
+/* page 横幅を広げる*/
+:root {
+  --width-min-container: 440px;
+}
+.w-m{
+  width: auto;
+} 
