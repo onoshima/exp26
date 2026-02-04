@@ -126,7 +126,14 @@ this.options.templateParameters.push({
       },
       "title": "Assign Participant ID and Stimulus Type",
       "tardy": true,
-      "plugins": [],
+      "plugins": [
+        {
+          "type": "fullscreen",
+          "message": "この実験はフルスクリーンモードで行います",
+          "hint": "クリックするとフルスクリーンモードになります",
+          "path": "lab.plugins.Fullscreen"
+        }
+      ],
       "skip": "${state.isMobile || state.IC != 1}",
       "shuffleGroups": [],
       "template": {
@@ -136,16 +143,19 @@ this.options.templateParameters.push({
           "": ""
         },
         "parameters": {},
-        "messageHandlers": {},
+        "messageHandlers": {
+          "before:prepare": function anonymous(
+) {
+this.state.screenWidth = window.screen.width;
+this.state.screenHeight = window.screen.height;
+this.state.innerWidth = window.innerWidth;
+this.state.innerHeight = window.innerHeight;
+this.state.devicePixelRatio = window.devicePixelRatio;
+}
+        },
         "title": "Main",
-        "plugins": [
-          {
-            "type": "fullscreen",
-            "message": "この実験はフルスクリーンモードで行います。",
-            "hint": "このメッセージをクリックするとフルスクリーンモードに変わります。",
-            "path": "lab.plugins.Fullscreen"
-          }
-        ],
+        "plugins": [],
+        "tardy": true,
         "content": [
           {
             "type": "lab.flow.Sequence",
