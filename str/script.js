@@ -187,6 +187,7 @@ document.body.style.cursor = 'none';
 },
                   "end": function anonymous(
 ) {
+document.body.style.cursor = 'auto';
 this.state.screenWidth = window.screen.width;
 this.state.screenHeight = window.screen.height;
 this.state.innerWidth = window.innerWidth;
