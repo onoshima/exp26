@@ -187,10 +187,6 @@ document.body.style.cursor = 'none';
 },
                   "end": function anonymous(
 ) {
-document.body.style.cursor = 'auto';
-},
-                  "before:prepare": function anonymous(
-) {
 this.state.screenWidth = window.screen.width;
 this.state.screenHeight = window.screen.height;
 this.state.innerWidth = window.innerWidth;
