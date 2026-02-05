@@ -41,39 +41,29 @@ const study = lab.util.fromObject({
 const userAgentInfo = this.state.meta.userAgent;
 const platformInfo = this.state.meta.platform;
 
-let isMobile;
-
 if(platformInfo =='iPhone' || platformInfo =='iPad' || userAgentInfo.indexOf('android') > 0){
-  isMobile = true;
+  this.state.isMobile = true;
 }
 else{
-  isMobile = false;
+  this.state.isMobile = false;
 }
 
-this.state.isMobile = isMobile;
-
 // https://learn.microsoft.com/ja-jp/microsoft-edge/web-platform/how-to-detect-win11
-// FireFoxとIEだとこの方法は使えないので
-if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
-  this.state.windowsVersion = "Unknown";
-  this.state.isFirefoxOrIE = true;
-} else {
-  this.state.isFirefoxOrIE = false;
-  try {
-    navigator.userAgentData.getHighEntropyValues([
+// FireFox, IE, だいたいのモバイル端末だとこの方法は使えないので
+
+try {
+  navigator.userAgentData.getHighEntropyValues([
     "platform",
     "platformVersion",
     "architecture",
     "model",
     "fullVersionList"
-    ])
- .then(ua => {
-   this.state.pcInfo = ua;   
-   });
-  } catch (e) { // モバイルでもお知らせ場面までは進ませたい
-    this.state.isFirefoxOrIE = false;
-  }
+    ]).then(ua => { this.state.pcInfo = ua;});
+    this.state.isAcceptableBrowser = true;
+} catch {
+  this.state.isAcceptableBrowser = false;
 }
+
 
 
 }
@@ -118,7 +108,7 @@ if (userAgentInfo.indexOf('Firefox') > 0 || userAgentInfo.indexOf('MSIE') > 0) {
       "parameters": {},
       "messageHandlers": {},
       "title": "IC",
-      "skip": "${state.isMobile || state.isFirefoxOrIE }",
+      "skip": "${state.isMobile || !(state.isAcceptableBrowser) }",
       "tardy": true,
       "plugins": []
     },
@@ -159,7 +149,7 @@ this.options.templateParameters.push({
           "path": "lab.plugins.Fullscreen"
         }
       ],
-      "skip": "${state.isMobile || state.IC != 1}",
+      "skip": "${state.IC != 1}",
       "shuffleGroups": [],
       "template": {
         "type": "lab.flow.Sequence",
@@ -1492,7 +1482,7 @@ console.log('データ送信終了');
         {
           "type": "text",
           "title": "お知らせ",
-          "content": "この実験は，PCからのみ参加いただけます。\nスマートフォンやタブレットPCでは参加いただけません。\n\nまた，実験に用いるウェブブラウザはGoogle Chrome，Microsoft Edge，Safariのいずれかです。\nそれ以外のブラウザではご参加いただけません。\n\n画面を閉じて終了してください。"
+          "content": "この実験は，PCからのみ参加いただけます。\nスマートフォンやタブレットPCでは参加いただけません。\n\n\u003Cp\u003Eまた，実験で用いることができるウェブブラウザはGoogle Chrome，Microsoft Edgeのいずれかです。\nそれ以外のブラウザではご参加いただけません。\u003C\u002Fp\u003E\n\n画面を閉じて終了してください。"
         }
       ],
       "scrollTop": true,
@@ -1506,7 +1496,7 @@ console.log('データ送信終了');
       "messageHandlers": {},
       "title": "Instruction for Non PC users",
       "tardy": true,
-      "skip": "${!(state.isMobile) && !(state.isFirefoxOrIE)}"
+      "skip": "${!( state.isMobile || !(state.isAcceptableBrowser))}"
     },
     {
       "type": "lab.html.Page",
