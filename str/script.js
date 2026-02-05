@@ -1088,15 +1088,15 @@ this.options.content.push({
                       },
                       {
                         "label": "何かがうまくいっているときは，それを続けることがとても楽しいと思う",
-                        "coding": "Reward-3"
+                        "coding": "RewardResponsiveness-3"
                       },
                       {
                         "label": "面白そうだと思えば，私はいつも何か新しいものを試したいと考えている",
-                        "coding": "Fun-4"
+                        "coding": "FunSeeking-4"
                       },
                       {
                         "label": "私は，欲しいものを手に入れたとき，興奮し，活気づけられる",
-                        "coding": "Reward-5"
+                        "coding": "RewardResponsiveness-5"
                       },
                       {
                         "label": "非難されたり怒られたりすると，私はかなり傷つく",
@@ -1108,7 +1108,7 @@ this.options.content.push({
                       },
                       {
                         "label": "楽しいかもしれないから，というだけの理由で何かをすることがよくある",
-                        "coding": "Fun-8"
+                        "coding": "FunSeeking-8"
                       },
                       {
                         "label": "欲しいものを手にいれるチャンスを見つけると，すぐに動き出す",
@@ -1120,11 +1120,11 @@ this.options.content.push({
                       },
                       {
                         "label": "何か好きなことをするチャンスをみつけると，私はすぐに興奮する",
-                        "coding": "Reward-11"
+                        "coding": "RewardResponsiveness-11"
                       },
                       {
                         "label": "私はしばしば時のはずみで行動する",
-                        "coding": "Fun-12"
+                        "coding": "FunSeeking-12"
                       },
                       {
                         "label": "何かよくないことが起ころうとしていると考えると，私はたいていくよくよ悩む",
@@ -1132,7 +1132,7 @@ this.options.content.push({
                       },
                       {
                         "label": "よいことが私の身に起こると，そのことは，私に強い影響を与える",
-                        "coding": "Reward-14"
+                        "coding": "RewardResponsiveness-14"
                       },
                       {
                         "label": "何か重要なことをあまりうまくできなかったと考えると不安になる",
@@ -1140,7 +1140,7 @@ this.options.content.push({
                       },
                       {
                         "label": "私は，興奮や新しい刺激を切望している",
-                        "coding": "Fun-16"
+                        "coding": "FunSeeking-16"
                       },
                       {
                         "label": "私は，何かを追い求めているときには徹底的にやる",
@@ -1152,7 +1152,7 @@ this.options.content.push({
                       },
                       {
                         "label": "競争に勝ったら，私は興奮するだろう",
-                        "coding": "Reward-19"
+                        "coding": "RewardResponsiveness-19"
                       },
                       {
                         "label": "私は，間違いを犯すことを心配している",
@@ -1244,51 +1244,51 @@ this.options.content.push({
                       },
                       {
                         "label": "他人には言えないようなことをしたことがある。",
-                        "coding": "ImpManage-29"
+                        "coding": "ImpressionManagement-29"
                       },
                       {
                         "label": "必要であれば，時々は嘘をつく。",
-                        "coding": "ImpManage-18"
+                        "coding": "ImpressionManagement-18"
                       },
                       {
                         "label": "人をうまく利用したことがある。",
-                        "coding": "ImpManage-20"
+                        "coding": "ImpressionManagement-20"
                       },
                       {
                         "label": "友達の陰口を言ったことがある。",
-                        "coding": "ImpManage-24"
+                        "coding": "ImpressionManagement-24"
                       },
                       {
                         "label": "人をののしったことがない。",
-                        "coding": "ImpManage-21"
+                        "coding": "ImpressionManagement-21"
                       },
                       {
                         "label": "かなりよくない習慣をいくつか持っている。",
-                        "coding": "ImpManage-33"
+                        "coding": "ImpressionManagement-33"
                       },
                       {
                         "label": "仮病で仕事や学校を休んだことがある。",
-                        "coding": "ImpManage-31"
+                        "coding": "ImpressionManagement-31"
                       },
                       {
                         "label": "道路や公共の場所で，ごみを落としたことはない。",
-                        "coding": "ImpManage-28"
+                        "coding": "ImpressionManagement-28"
                       },
                       {
                         "label": "人と争ったとき，水に流すよりもむしろ復しゅうする。",
-                        "coding": "ImpManage-22"
+                        "coding": "ImpressionManagement-22"
                       },
                       {
                         "label": "私は恐らく捕まらないような時でも，いつも法律に従っている。",
-                        "coding": "ImpManage-23"
+                        "coding": "ImpressionManagement-23"
                       },
                       {
                         "label": "お釣りを多くもらったとき，気づいてもそのまま受け取ってしまう。",
-                        "coding": "ImpManage-26"
+                        "coding": "ImpressionManagement-26"
                       },
                       {
                         "label": "図書館の本や店の商品を破損した時は，必ずそれを報告する。",
-                        "coding": "ImpManage-32"
+                        "coding": "ImpressionManagement-32"
                       }
                     ],
                     "width": "5",
@@ -1476,7 +1476,7 @@ fetch("https://pipe.jspsych.org/api/data/", {
     data: data,
   }),
 });
-console.log('データ送信終了');
+
 }
                 },
                 "title": "Thanks",
