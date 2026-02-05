@@ -1055,7 +1055,7 @@ this.options.content.push({
                     ],
                     "shuffle": true,
                     "help": "",
-                    "name": "selfControl",
+                    "name": "BSCS",
                     "label": "それぞれの項目は，あなたにどのくらいあてはまりますか。あなたにあてはまる程度を答えてください。"
                   }
                 ],
@@ -1435,7 +1435,7 @@ this.options.content.push({
                 },
                 "parameters": {},
                 "messageHandlers": {},
-                "title": "Other"
+                "title": "Others"
               },
               {
                 "type": "lab.html.Page",
