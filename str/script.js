@@ -151,14 +151,7 @@ try {
             "title": "IC",
             "skip": "${state.isMobile || !(state.isAcceptableBrowser) }",
             "tardy": true,
-            "plugins": [
-              {
-                "type": "fullscreen",
-                "message": "この実験はフルスクリーンモードで行います。",
-                "hint": "画面をクリックするとフルスクリーンモードに変わります。",
-                "path": "lab.plugins.Fullscreen"
-              }
-            ]
+            "plugins": []
           },
           {
             "type": "lab.flow.Sequence",
@@ -167,18 +160,17 @@ try {
               "": ""
             },
             "parameters": {},
-            "messageHandlers": {
-              "before:prepare": function anonymous(
-) {
-this.state.screenWidth = window.screen.width;
-this.state.screenHeight = window.screen.height;
-this.state.innerWidth = window.innerWidth;
-this.state.innerHeight = window.innerHeight;
-this.state.devicePixelRatio = window.devicePixelRatio;
-}
-            },
+            "messageHandlers": {},
             "title": "Main",
             "tardy": true,
+            "plugins": [
+              {
+                "type": "fullscreen",
+                "message": "この実験はフルスクリーンモードで行います。",
+                "hint": "画面をクリックするとフルスクリーンモードに変わります。",
+                "path": "lab.plugins.Fullscreen"
+              }
+            ],
             "skip": "${state.IC != 1}",
             "content": [
               {
@@ -196,6 +188,14 @@ document.body.style.cursor = 'none';
                   "end": function anonymous(
 ) {
 document.body.style.cursor = 'auto';
+},
+                  "before:prepare": function anonymous(
+) {
+this.state.screenWidth = window.screen.width;
+this.state.screenHeight = window.screen.height;
+this.state.innerWidth = window.innerWidth;
+this.state.innerHeight = window.innerHeight;
+this.state.devicePixelRatio = window.devicePixelRatio;
 }
                 },
                 "title": "Stroop",
