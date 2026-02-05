@@ -179,7 +179,7 @@ this.state.devicePixelRatio = window.devicePixelRatio;
             },
             "title": "Main",
             "tardy": true,
-            "skip": "$ {state.IC != 1}",
+            "skip": "${state.IC != 1}",
             "content": [
               {
                 "type": "lab.flow.Sequence",
