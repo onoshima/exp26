@@ -365,29 +365,29 @@ let positionLetter;
 let text;
 
 if (this.parameters.condition === 'congruent') {
-  if (this.parameters.position === 'left') {
-    positionTriangle = -349; // 画面解像度によっては線がはいるため1ピクセル少なく
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に左向き
+    positionTriangle = -324; // 解像度によっては線がはいるため1ピクセル少なめ
+    positionRect = -275
     angle = 270;
     positionLetter = -300;
     text = '左';
-  } else { // right
-    positionTriangle = 349;
-    positionRect = 300
+  } else { // right　右に右向き
+    positionTriangle = 324;
+    positionRect = 275
     angle = 90;
     positionLetter = 300;
     text = '右';
   } 
 } else { // incongruent
-  if (this.parameters.position === 'left') {
-    positionTriangle = -251;
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に右向き
+    positionTriangle = -275;
+    positionRect = -324
     angle = 90;
     positionLetter = -300;
     text = '右';
-  } else { // right
-    positionTriangle = 251;
-    positionRect = 300
+  } else { // right // 右に左向き
+    positionTriangle = 275;
+    positionRect = 324
     angle = 270;
     positionLetter = 300;
     text = '左';
@@ -425,8 +425,6 @@ this.options.content.push({
     fontSize: 40,
   })
 }
-
-
 }
                           },
                           "title": "Stimulus",
@@ -646,29 +644,29 @@ let positionLetter;
 let text;
 
 if (this.parameters.condition === 'congruent') {
-  if (this.parameters.position === 'left') {
-    positionTriangle = -349; // 解像度によっては線がはいるため1ピクセル少なめ
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に左向き
+    positionTriangle = -324; // 解像度によっては線がはいるため1ピクセル少なめ
+    positionRect = -275
     angle = 270;
     positionLetter = -300;
     text = '左';
-  } else { // right
-    positionTriangle = 349;
-    positionRect = 300
+  } else { // right　右に右向き
+    positionTriangle = 324;
+    positionRect = 275
     angle = 90;
     positionLetter = 300;
     text = '右';
   } 
 } else { // incongruent
-  if (this.parameters.position === 'left') {
-    positionTriangle = -251;
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に右向き
+    positionTriangle = -275;
+    positionRect = -324
     angle = 90;
     positionLetter = -300;
     text = '右';
-  } else { // right
-    positionTriangle = 251;
-    positionRect = 300
+  } else { // right // 右に左向き
+    positionTriangle = 275;
+    positionRect = 324
     angle = 270;
     positionLetter = 300;
     text = '左';
@@ -896,29 +894,29 @@ let positionLetter;
 let text;
 
 if (this.parameters.condition === 'congruent') {
-  if (this.parameters.position === 'left') {
-    positionTriangle = -349; // 解像度によっては線がはいるため1ピクセル少なめ
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に左向き
+    positionTriangle = -324; // 解像度によっては線がはいるため1ピクセル少なめ
+    positionRect = -275
     angle = 270;
     positionLetter = -300;
     text = '左';
-  } else { // right
-    positionTriangle = 349;
-    positionRect = 300
+  } else { // right　右に右向き
+    positionTriangle = 324;
+    positionRect = 275
     angle = 90;
     positionLetter = 300;
     text = '右';
   } 
 } else { // incongruent
-  if (this.parameters.position === 'left') {
-    positionTriangle = -251;
-    positionRect = -300
+  if (this.parameters.position === 'left') { // 左に右向き
+    positionTriangle = -275;
+    positionRect = -324
     angle = 90;
     positionLetter = -300;
     text = '右';
-  } else { // right
-    positionTriangle = 251;
-    positionRect = 300
+  } else { // right // 右に左向き
+    positionTriangle = 275;
+    positionRect = 324
     angle = 270;
     positionLetter = 300;
     text = '左';
@@ -956,8 +954,6 @@ this.options.content.push({
     fontSize: 40,
   })
 }
-
-
 }
                           },
                           "title": "Stimulus",
